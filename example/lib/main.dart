@@ -47,7 +47,7 @@ class RespoEx extends StatelessWidget {
             children: List.generate(20, (i) {
               if (i == 5) {
                 return Div(
-                    divison: const Division(
+                    division: const Division(
                       colS: 5,
                       offsetL: 2,
                     ),
@@ -94,7 +94,7 @@ class _GenerateWidgetState extends State<GenerateWidget> {
   @override
   Widget build(BuildContext context) {
     return Div(
-      divison: Division(
+      division: Division(
         colXS: colXS,
         colS: colS,
         colM: colM,
