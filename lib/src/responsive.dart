@@ -14,6 +14,7 @@ class Responsive extends StatelessWidget {
     Key? key,
     required this.children,
     this.runSpacing = 0.0,
+    this.spacing = 0.0,
     this.alignment = WrapAlignment.start,
     this.runAlignment = WrapAlignment.start,
     this.crossAxisAlignment = WrapCrossAlignment.start,
@@ -87,12 +88,22 @@ class Responsive extends StatelessWidget {
   /// Defaults to 0.0.
   final double runSpacing;
 
+  /// How much space to place between children in a run in the main axis.
+  ///
+  /// For example, if spacing is 10.0, the children will be spaced at least 10.0 logical pixels apart in the main axis.
+  ///
+  /// If there is additional free space in a run (e.g., because the wrap has a minimum size that is not filled or because some runs are longer than others), the additional free space will be allocated according to the alignment.
+  ///
+  /// Defaults to 0.0.
+  final double spacing;
+
   @override
   Widget build(BuildContext context) {
     return Wrap(
       alignment: alignment,
       runSpacing: runSpacing,
       runAlignment: runAlignment,
+      spacing: spacing,
       crossAxisAlignment: crossAxisAlignment,
       children: children,
     );
