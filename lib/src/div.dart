@@ -9,14 +9,12 @@ class Div extends StatelessWidget {
   final Widget child;
   final Division division;
   final double additionalWidth;
-  final double growWidthPercentage;
 
   const Div({
     Key? key,
     this.division = const Division(),
     required this.child,
     this.additionalWidth = 0,
-    this.growWidthPercentage = 1,
   }) : super(key: key);
 
   @override
@@ -62,13 +60,13 @@ class Div extends StatelessWidget {
             : childWidth;
 
         return SizedBox(
-          width: (recalculatedChildWidth + childOffset + additionalWidth) * growWidthPercentage,
+          width: recalculatedChildWidth + childOffset + additionalWidth,
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               SizedBox(
-                width: (recalculatedChildWidth + additionalWidth) * growWidthPercentage,
+                width: recalculatedChildWidth + additionalWidth,
                 child: child,
               ),
             ],
