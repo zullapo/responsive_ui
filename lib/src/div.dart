@@ -60,13 +60,13 @@ class Div extends StatelessWidget {
             : childWidth;
 
         return SizedBox(
-          width: recalculatedChildWidth + childOffset,
+          width: recalculatedChildWidth + childOffset + additionalWidth,
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               SizedBox(
-                width: recalculatedChildWidth,
+                width: recalculatedChildWidth + additionalWidth,
                 child: child,
               ),
             ],
